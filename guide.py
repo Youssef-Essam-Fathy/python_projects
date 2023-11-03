@@ -1,6 +1,5 @@
 age = 22; # int بنعرف متغير نوعه
 name = "Youssef" # string بنعرف
-
 print(f"my name is {name} and age is {age}") #formatted string بنطبع
 print("my name is {} and age is {}".format(name, age)) #نفس اللى فوق بطريقة تانية
 print("my name is\n \"" + name + "\" and age is " + str(age)) #escape sequences كمان استخدمنا concatenation الطباعة عن طريق
@@ -161,19 +160,18 @@ if __name__ == "__main__":
 	fibo.fib(129) # fib اللى اسمها funcبستدعى ال
 	print(dir(fibo)) #  module fiboبتاعة ال dir بطبع ال
 list = [1, 3, 3, 9, 27, 233] # list of integers
-list[-1] = 243 # replace error
-list.append(6561) # add a new item to the list
+list[-1] = 243 # replace error 233 and put 243
+list.append(6561) # add a new item to the list and be put in last index
 print(list) # print the list
 print(list[1]) # slicing the list
 listr = ["Youssef", "Name", "Play", "Done"] # list of string
 print(listr) # print the list
 listmix = [1, "name", 2.3, False] # list of mixed data types
 listmix[3] = True # changing the value of list at index 3
-listmix.insert(0, 122) # inserting 122 at index 0
+listmix.insert(0, 122) # inserting 122 at index 0 instead of 1
 listmix.remove(1) # remove index 1
-p = listmix.pop() # p = True and True is remove from listmix void pop()
+p = listmix.pop() # p = True and True is removed from listmix void pop()[last index]
 print(p) # print the last index value of the list
 print(listmix) # print the list
 print(listmix.pop(0)) # print index 0 which = 122
-
-
+print(listmix) # print the list
