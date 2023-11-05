@@ -175,3 +175,22 @@ print(p) # print the last index value of the list
 print(listmix) # print the list
 print(listmix.pop(0)) # print index 0 which = 122
 print(listmix) # print the list
+indxx = listmix.index(2.3) # showing the index number of 2.3 (first appearance)
+print(indxx) # printing 1 index number of 2.3
+listmix.append(3) # add 3 to last index
+listmix.append(5) # add 5 to last index
+listmix.append(3) # add 3 to last index
+listmix.append(4) # add 4 to last index
+listmix.append(3) # add 3 to last index
+listmix.append(2.3) # add 2.3 to last index
+cnt = listmix.count(3) # showing how many 3 element come in the list
+cnt2 = listmix.count(2.3) # showing how many 2.3 element come in the list
+print(listmix) # print the list
+print(cnt) # output is 3
+print(cnt2) # output is 2
+list.sort() # arrange the list from smaller to bigger
+print(list) # print the list
+listr.sort() # arrange the list from smaller to bigger
+print(listr) # print the list
+
+
