@@ -217,7 +217,7 @@ list.sort()  # arrange the list from smaller to bigger
 print(list)  # print the list
 listr.sort()  # arrange the list from smaller to bigger
 print(listr)  # print the list
-list.reverse()  # reversr the arrangement of the list (the last becomes first)
+list.reverse()  # reverse the arrangement of the list (the last becomes first)
 print(list)  # print the list
 listr.reverse()  # reversr the arrangement of the list (the last becomes first)
 print(listr)  # print the list
@@ -226,4 +226,110 @@ print(len(listr))  # print the length of the list
 print(len(listmix))  # print the length of the list
 print(len(listmix) - 1)  # print the no. of index of the list
 
-# List comprehension: a concise way to create lists based on existing ones
+# List comprehension: a concise way to create lists based on existing ones:
+# -------------------------------------------------------------------------
+comlist = [] # here is a comprehensed list (a void list)
+for i in range(12): # in this for loop we iterate from 0 to 11
+    comlist.append(i) # here we append i to the comlist
+print(comlist) # then printing the list and this illustrates the List comprehension
+# # # # # # # # # # # # # # # Another examples # # # # # # # # # # # # # #
+square = [x ** 2 for x in range(1, 6)] # iterate on x from 1 to 6 then perform x ** 2
+print(square) 				 	 	   # then put the result in a list and print it here
+even_nums = [x for x in square if x & 1 == 0] # if x (in square list) & 1 == 0 or x % 2 == 0
+#even_nums = [x for x in square if x % 2 == 0] -> if x (in square list) & 1 == 0 or x % 2 == 0
+print(even_nums)							  # print the even_nums list
+# --------------------------------------------------------------------------
+
+# using list as a stack which is a data structure that follows the
+# Last-In-First_Out (LIFO) principle i.e: elements are added and removed
+# from the same end of the stack:  اخر عنصر دخلته هو اول عنصر طلع
+# -------------------------------
+stack = []
+# push elements into stack
+stack.append(1)
+stack.append(2)
+stack.append(3)   # stack: [1, 2, 3]
+#pop element from stack
+popped_element = stack.pop()
+print("popped:", popped_element) # output: popped: 3
+# the stack now contains [1, 2]
+print("stack:", stack) # output: stack: [1, 2]
+
+#-------------------------------------------------
+
+# using list as a queue which is a data structure that follows
+# First-In-First_Out (FIFO) principle i.e: elements are added at one end
+# and removed from the other end of the queue: اول عنصر بندخله هو اللى بيخرج الأول
+# -------------------------------------------
+queue = []
+# Enqueue elements in the queue
+queue.append("a")
+queue.append("b")
+queue.append("c") # queue: ["a", "b", "c"]
+#Dequeue elements from the queue
+dequeued_element =  queue.pop(0)
+print("Dequeued:", dequeued_element) # output: Dequeued: a
+#The queue now contains ["b", "c"]
+print("Queue:", queue) # output: Queue: ["b", "c"]
+# --------------------------------------------------------------------------
+
+# Tuples:
+# -------
+# They are another built-in data types in python, similar to lists.
+# However, there are some key differences between tuples and lists.
+# Tuples (as strings) are immutable لا تتغير , ordered collections of
+# items. Once created, the elements of a tuple cannot be changed, added or removed.
+# creating tuples:
+# ----------------
+# Tuples are created by enclosing a comma-separated sequence of
+# values within parantheses ()
+
+# creating a tuple
+my_tuple = (1, 3, True,"Ahmed", "Mohammed", "Youssef")
+# tuple can be created without parantheses, using just commas
+# my_tuple = 1, 3, True,"Ahmed", "Mohammed", "Youssef"
+print(my_tuple[0]) # output: 1
+print(my_tuple[2]) # output: True
+print(my_tuple[3]) # output: Ahmed
+print(my_tuple.count(3)) # show how many 3 in tuple (only 1 time)
+print(my_tuple.index("Ahmed")) # give the index representing the value "Ahmed" (index 3)
+print("==============")
+# access the elements of the tuple and printing them
+for i in my_tuple:
+    print(i)
+# Tuple packing and unpacking:
+# Packing is a process of combining multiple values into single tuple.
+# Unpacking is the process of extracting values from a tuple and assigning
+# them to multiple variables.
+# Packing values into a tuple
+coordinate = 3.14, 2.71
+# Unpacking values from a tuple
+x, y = coordinate
+print(x) # output: 3.14
+print(y) # output: 2.71
+# Using tuples for multiple return values:
+# Tuples are often used to return multiple values from functions
+def get():
+    return "JOO", 22
+name, age = get() # unpacking
+print(name) # output: JOO
+print(age) # output: 22
+
+# Tuples are immutable
+# t = (1, 3)
+# t[1] = 2 will give an error
+
+# The del statement in python is used to delete objects, variables,
+# Or elements from sequences, such as lists or dictionaries
+# Deleting variables
+x = 10
+del x
+#Deleting elements from lists
+numbers = [1, 2, 3, 4, 5]
+del numbers[3] # removes the element at index 3 (value 4)
+# Deleting slices from lists:
+del numbers[1:3] # remove elements at indices 1 and 2 (value 2 and 3)
+print(numbers)
+#
+#
+#
