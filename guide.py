@@ -182,11 +182,11 @@ if __name__ == "__main__":
     import fibo  # fibo اللى اسمه module بنادى على ال
     fibo.fib(129)  # fib اللى اسمها funcبستدعى ال
     print(dir(fibo))  # module fiboبتاعة ال dir بطبع ال
-list = [1, 3, 3, 9, 27, 233]  # list of integers
-list[-1] = 243  # replace error 233 and put 243
-list.append(6561)  # add a new item to the list and be put in last index
-print(list)  # print the list
-print(list[1])  # slicing the list
+lista = [1, 3, 3, 9, 27, 233]  # list of integers
+lista[-1] = 243  # replace error 233 and put 243
+lista.append(6561)  # add a new item to the list and be put in last index
+print(lista)  # print the list
+print(lista[1])  # slicing the list
 listr = ["Youssef", "Name", "Play", "Done"]  # list of string
 print(listr)  # print the list
 listmix = [1, "name", 2.3, False]  # list of mixed data types
@@ -213,15 +213,15 @@ cnt2 = listmix.count(2.3)  # showing how many 2.3 element come in the list
 print(listmix)  # print the list
 print(cnt)  # output is 3
 print(cnt2)  # output is 2
-list.sort()  # arrange the list from smaller to bigger
-print(list)  # print the list
+lista.sort()  # arrange the list from smaller to bigger
+print(lista)  # print the list
 listr.sort()  # arrange the list from smaller to bigger
 print(listr)  # print the list
-list.reverse()  # reverse the arrangement of the list (the last becomes first)
-print(list)  # print the list
+lista.reverse()  # reverse the arrangement of the list (the last becomes first)
+print(lista)  # print the list
 listr.reverse()  # reversr the arrangement of the list (the last becomes first)
 print(listr)  # print the list
-print(len(list))  # print the length of the list
+print(len(lista))  # print the length of the list
 print(len(listr))  # print the length of the list
 print(len(listmix))  # print the length of the list
 print(len(listmix) - 1)  # print the no. of index of the list
@@ -330,6 +330,167 @@ del numbers[3] # removes the element at index 3 (value 4)
 # Deleting slices from lists:
 del numbers[1:3] # remove elements at indices 1 and 2 (value 2 and 3)
 print(numbers)
+# data structures: set and dictionary
+# set: a built-in data type useful when you want to store a
+# collection of items where each item appears only once and
+# the order of theitems doesn't matter
+# creating a set: you can create a set by enclosing a comma-separated
+# list of elements within curly braces
+my_set = {4, 5, 6, "Joo", False}
+print(my_set)
+# we can create a set from a list using the set() constructor
+m_list = [22, 34, 12, "AAA"]
+set2 = set(m_list) # create a set from a list
+my_set.add(900) # adding 900 to the set 3 times
+my_set.add(900) # but it will appear only once
+my_set.add(900) # so my_set = {False, 4, 5, 6, 900, 'Joo'}
+print(my_set)
+my_set.remove(4) # remove element not index
+print(my_set)
+print(my_set.pop()) # show any element
+my_set.clear() # clears the set
+print(my_set)
+s3 = set2.copy() # copy set2 in s3
+print(s3)
+ssa = {'a', 2, 5, 6}
+ssb = {'b', 3, 6, 5}
+ssc = ssa | ssb # | is union or union(other_set)
+print(ssc)
+ssd = ssa & ssb # & is intersection or intersection(other_set)
+print(ssd)
+sse = ssa - ssb # - is difference or difference(other_set)
+# the difference occurs for first set only
+print(sse)
+ssf = ssa ^ ssb # ^ is the symmetric_difference or
+# symmetric_difference(other_set) the difference occurs for first and second
+# set
+print(ssf)
+# we can iterate through sets
+for i in ssf:
+    print(i, end=" ")
+# Dictionary: it is a built_in data structure that stores a collection
+# of key-value pairs. Each key in a dictionary is unique and maps to a
+# specific value.
+# Dictionaries are useful when you want to associate data with specific
+# labels (keys) for efficient and quick access
+# Creating a dictionary: you can create a dictionary by enclosing a
+# comma-separated list of key-value pairs within curly brace {}
+print()
+my_dict = {"Name" : "Joo", "age" : 22, "Color" : "Red"}
+# we can also use dict() constructor to make a dictionary
+print(my_dict)
+# access the value of a specific key
+print(my_dict["Name"])
+# modifying the value of a specific key
+my_dict["Color"] = "Blue"
+print(my_dict["Color"])
+# adding a new item mto dictionary
+my_dict["City"] = "Cairo"
+print(my_dict)
+# removing an item using pop which prints the deleted item
+# or del which remove the item without printing it
+print(my_dict.pop("Color"))
+print(my_dict)
+del my_dict["City"]
+print(my_dict)
+# checking for a key if it presents in a dictionary
+if 'Name' in my_dict:
+    print("Yes it exists")
+else:
+    print("Not found")
+# iterate through keys
+for key in my_dict:
+    print(key)
+# iterate through values
+for value in my_dict.values():
+    print(value)
+# iterate through both key and value
+for key, value in my_dict.items():
+    print(key, value)
+# A lambda function in python is a small, anonymous, and inline function
+# that can have any number of arguments, but have one expression.
+# It is sometimes referred to as an "anonymous function" because
+# it doesn't require a named function definition using the def keyword
+addd = lambda yx, yy: yx + yy
+nateg = addd(3, 12)
+print(nateg) # output: 15
+# equal to
+def adsd(aa, bb):
+    return aa + bb
+ress = adsd(3, 12)
+print(ress) # output: 15
+# A map(function, sequence): The map() function applies a given
+# function to each element in a sequence (such as a list) and return
+# a new sequence containing the results
+numms = [1, 2, 3, 4, 5, 6]
+squared = map(lambda Ux: Ux ** 2, numms)
+squared_list = list(squared)
+print(squared_list)
+print(numms)
+# A filter(function, sequence): The filter() function filters elements
+# from a sequence based on whether they satisfy a given function
+# (predicate). It returns a new sequence containing only the element
+# that pass the filter
+print(list(filter(lambda ni: ni % 2 == 0, numms)))
+# A reduce(function, sequence): The reduce function , previously part
+# of the functools module (in python 3.0+), succesively applies a given
+# function to the elements of a sequence, reducing it to a single
+# accumulated result.
+from functools import reduce
+print(reduce(lambda vu, bu:vu * bu, numms))
+# Python exception
+try:
+    result = 1 / 0 # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("ERROR: Division by zero")
+
+try:
+    value = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input. Please Enter a valid number")
+except KeyboardInterrupt:
+    print("User interrupted the input")
+
+try:
+    ctv = 92 / 0
+except (ZeroDivisionError, KeyboardInterrupt):
+    print("Zero division error and keyboard")
+
+try:
+    numerator = int(input("Enter a numerator: "))
+    denominator = int(input("Enter a denominator: "))
+    qout = numerator / denominator
+except ValueError:
+    print("Invalid input. You should enter integer values")
+except ZeroDivisionError:
+    print("Can't divide by zero")
+else:
+    print("Result: ", qout)
+finally:
+    print("Exception handling completed")
+
+# You can raise built-in exceptions using raise statements
+def divide(aa, bb):
+    if bb == 0:
+        raise ZeroDivisionError("Division by zero is not allowed")
+    return aa / bb
+# print(divide(12, 0))
+
+def process_file(file_path):
+    if not file_path.endswith(".txt"):
+        raise ValueError("Invalid file format. only .txt are allowed")
+# print(process_file("guide.py"))
+
+# try...except to open a file
+try:
+    file = open("data.txt", "r")
+except FileNotFoundError as error:
+    print("File not found!", error)
+finally:
+    file.close()
+
 #
 #
-#
+
+
+
